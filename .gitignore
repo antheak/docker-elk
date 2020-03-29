@@ -1,3 +1,4 @@
 .env
-/logstash/pipeline/*
+logstash/pipeline/*
 *DS_Store*
+betfair/certs/*
