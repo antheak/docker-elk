@@ -1,6 +1,18 @@
 version: '3.2'
 
 services:
+  betfair:
+    build: betfair/
+    volumes:
+      - type: bind
+        source: ../scripts
+        target: /scripts
+      - type: volume
+        source: betfair_data
+        target: /data
+    networks:
+      - elk
+
   elasticsearch:
     build:
       context: elasticsearch/
@@ -75,3 +87,4 @@ networks:
 
 volumes:
   elasticsearch:
+  betfair_data:
